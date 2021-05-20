@@ -7,7 +7,7 @@ const Leaderboard = () => {
       <Link className="landing-buttons" to="/">
         Back to home page
       </Link>
-      Leaderboard
+      <div className="leaderboard">Leaderboard</div>
     </div>
   );
 };

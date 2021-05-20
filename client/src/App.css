@@ -18,3 +18,16 @@
   margin: 1rem;
   color: rgb(67, 67, 67);
 }
+.leaderboard {
+  display: flex;
+  min-height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.marks {
+  display: flex;
+  min-height: 90vh;
+  justify-content: center;
+  align-items: center;
+}

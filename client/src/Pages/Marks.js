@@ -7,7 +7,7 @@ const Marks = () => {
       <Link className="landing-buttons" to="/">
         Back to home page
       </Link>
-      Marks
+      <div className="marks">Marks</div>
     </div>
   );
 };
