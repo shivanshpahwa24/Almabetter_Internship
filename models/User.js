@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 const db = require("../config/db");
 
 const User = db.define("user", {
-  rollno: {
+  rollNo: {
     type: Sequelize.STRING,
     primaryKey: true,
     allowNull: false,
@@ -11,13 +11,13 @@ const User = db.define("user", {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  marks_maths: {
+  maths: {
     type: Sequelize.INTEGER,
   },
-  marks_physics: {
+  physics: {
     type: Sequelize.INTEGER,
   },
-  marks_chemistry: {
+  chemistry: {
     type: Sequelize.INTEGER,
   },
   total: {

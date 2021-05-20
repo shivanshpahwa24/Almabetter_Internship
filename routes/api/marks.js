@@ -20,14 +20,11 @@ router.get("/", async (req, res) => {
 router.post(
   "/",
   [
-    check("rollno", "Roll No. is required").not().isEmpty(),
+    check("rollNo", "Roll No. is required").not().isEmpty(),
     check("name", "Name is required").not().isEmpty(),
-    check("marks_maths", "Maths Marks should be in numeric").isNumeric(),
-    check("marks_physics", "Physics Marks should be in numeric").isNumeric(),
-    check(
-      "marks_chemistry",
-      "Chemistry Marks should be in numeric"
-    ).isNumeric(),
+    check("maths", "Maths Marks should be in numeric").isNumeric(),
+    check("physics", "Physics Marks should be in numeric").isNumeric(),
+    check("chemistry", "Chemistry Marks should be in numeric").isNumeric(),
   ],
   async (req, res) => {
     const errors = validationResult(req); //Check for any errors
@@ -35,18 +32,14 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    let { rollno, name, marks_maths, marks_physics, marks_chemistry } =
-      req.body;
+    let { rollNo, name, maths, physics, chemistry } = req.body;
 
-    const total =
-      parseInt(marks_maths) +
-      parseInt(marks_physics) +
-      parseInt(marks_chemistry);
+    const total = parseInt(maths) + parseInt(physics) + parseInt(chemistry);
     const percentage = total / 3;
 
     try {
       //See if User exists
-      let user = await User.findOne({ rollno });
+      let user = await User.findOne({ rollNo });
       if (user) {
         return res
           .status(400)
@@ -55,11 +48,11 @@ router.post(
 
       // Insert into table
       user = await User.create({
-        rollno,
+        rollNo,
         name,
-        marks_maths,
-        marks_physics,
-        marks_chemistry,
+        maths,
+        physics,
+        chemistry,
         total,
         percentage,
       });

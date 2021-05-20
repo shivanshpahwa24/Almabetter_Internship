@@ -4,15 +4,20 @@ import Landing from "./Pages/Landing";
 import Leaderboard from "./Pages/Leaderboard";
 import Marks from "./Pages/Marks";
 
+import { Provider } from "react-redux";
+import store from "./store";
+
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route path="/marks" component={Marks} />
-        <Route path="/leaderboard" component={Leaderboard} />
-      </Switch>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route path="/marks" component={Marks} />
+          <Route path="/leaderboard" component={Leaderboard} />
+        </Switch>
+      </Router>
+    </Provider>
   );
 }
 
