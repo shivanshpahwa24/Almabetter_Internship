@@ -5,8 +5,11 @@ The application fulfils all the requirements that were mentioned by the team Alm
 **STACK USED :-**
 
 Frontend : React
+
 Backend : Node
+
 Database : MySQL
+
 State Management : Redux
 
 **API endpoints :-**
