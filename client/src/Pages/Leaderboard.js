@@ -11,7 +11,7 @@ const Leaderboard = ({ getMarks, marks: { users } }) => {
   }, [getMarks]);
   return (
     <div className="leaderboard">
-      <div style={{ width: "100%" }}>
+      <div className="leaderboard-container">
         <DataGrid
           columns={[
             { field: "name", headerName: "Name" },

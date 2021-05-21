@@ -15,11 +15,11 @@ function App() {
         <Alert />
         <Switch>
           <Route exact path="/" component={Landing} />
-          <div className="app-container">
+          <>
             <Navbar />
             <Route exact path="/marks" component={Marks} />
             <Route exact path="/leaderboard" component={Leaderboard} />
-          </div>
+          </>
         </Switch>
       </Router>
     </Provider>

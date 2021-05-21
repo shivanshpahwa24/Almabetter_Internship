@@ -27,7 +27,7 @@ const User = db.define("user", {
     type: Sequelize.INTEGER,
   },
   percentage: {
-    type: Sequelize.FLOAT,
+    type: Sequelize.STRING,
   },
 });
 

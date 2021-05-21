@@ -23,9 +23,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-.app-container {
-  min-height: 90vh;
-}
 .navbar {
   min-height: 10vh;
   background-color: white;
@@ -80,14 +77,6 @@ body {
   font-size: 1.2rem;
 }
 
-.leaderboard {
-  display: flex;
-  width: 70vw;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-}
-
 .marks {
   height: 90vh;
   width: 100%;
@@ -103,9 +92,28 @@ body {
 .marks .form-group {
   margin: 0.5rem 0;
 }
+
+.leaderboard {
+  height: 90vh;
+  width: 100vw;
+  color: var(--dark-color-a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leaderboard-container {
+  width: 70%;
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+}
+
 @media (max-width: 768px) {
   .marks-container {
     width: 60%;
+  }
+  .leaderboard-container {
+    width: 90%;
   }
 }
 
