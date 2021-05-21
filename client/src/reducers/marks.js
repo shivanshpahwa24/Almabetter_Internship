@@ -7,7 +7,7 @@ const initialState = {
   error: {},
 };
 
-const Marks = (state = initialState, action) => {
+export default function marks(state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
@@ -29,6 +29,4 @@ const Marks = (state = initialState, action) => {
     default:
       return state;
   }
-};
-
-export default Marks;
+}

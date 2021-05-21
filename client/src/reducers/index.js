@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import Alert from "./alert";
-import Marks from "./marks";
+import alert from "./alert";
+import marks from "./marks";
 
-export default combineReducers({ Alert, Marks });
+export default combineReducers({ alert, marks });

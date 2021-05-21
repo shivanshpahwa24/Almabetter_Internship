@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { addMarks } from "../actions/marks";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-const Marks = ({ addMarks }) => {
+const Marks = ({ addMarks, history }) => {
   const [formData, setFormData] = useState({
     name: "",
     rollNo: "",
@@ -21,7 +21,7 @@ const Marks = ({ addMarks }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    addMarks({ name, rollNo, maths, physics, chemistry });
+    addMarks(formData, history);
   };
 
   return (
@@ -92,4 +92,4 @@ Marks.propTypes = {
   addMarks: PropTypes.func.isRequired,
 };
 
-export default connect({ addMarks })(Marks);
+export default connect(null, { addMarks })(withRouter(Marks));
