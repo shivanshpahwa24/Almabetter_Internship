@@ -9,6 +9,12 @@ module.exports = new Sequelize(SQL_DB, SQL_USER, SQL_PASSWORD, {
   host: SQL_HOST,
   dialect: SQL_TYPE,
   port: 5432,
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
   pool: {
     max: 5,
     min: 0,
