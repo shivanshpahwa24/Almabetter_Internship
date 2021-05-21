@@ -7,7 +7,6 @@ import Marks from "./Pages/Marks";
 import Alert from "./components/Alert";
 import { Provider } from "react-redux";
 import store from "./store";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

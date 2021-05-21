@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { addMarks } from "../actions/marks";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -34,59 +34,65 @@ const Marks = ({ addMarks, history }) => {
 
   return (
     <div className="marks">
-      <h1 className="large text-primary">Enter your marks</h1>
+      <div className="marks-container">
+        <h1>Enter Your Information</h1>
 
-      <form className="form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Name"
-            name="name"
-            onChange={onChange}
-            value={name}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Roll No."
-            name="rollNo"
-            value={rollNo}
-            onChange={onChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Maths (Out of 100)"
-            name="maths"
-            value={maths}
-            onChange={onChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Physics (Out of 100)"
-            name="physics"
-            value={physics}
-            onChange={onChange}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Chemistry (Out of 100)"
-            name="chemistry"
-            value={chemistry}
-            onChange={onChange}
-          />
-        </div>
-        <input type="submit" className="btn btn-primary" value="Add Marks" />
-      </form>
-      <p className="my-1">
-        <Link to="/leaderboard">View Leaderboard</Link>
-      </p>
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Name"
+              name="name"
+              onChange={onChange}
+              value={name}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Roll No."
+              name="rollNo"
+              value={rollNo}
+              onChange={onChange}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Maths (Out of 100)"
+              name="maths"
+              value={maths}
+              onChange={onChange}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Physics (Out of 100)"
+              name="physics"
+              value={physics}
+              onChange={onChange}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Chemistry (Out of 100)"
+              name="chemistry"
+              value={chemistry}
+              onChange={onChange}
+            />
+          </div>
+          <button type="submit" className="btn btn-secondary px-4">
+            Add Marks
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
