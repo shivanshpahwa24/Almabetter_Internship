@@ -22,6 +22,14 @@ const Marks = ({ addMarks, history }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     addMarks(formData, history);
+    setFormData({
+      ...formData,
+      name: "",
+      rollNo: "",
+      maths: "",
+      physics: "",
+      chemistry: "",
+    });
   };
 
   return (

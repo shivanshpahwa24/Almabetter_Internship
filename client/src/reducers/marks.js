@@ -1,4 +1,4 @@
-import { VIEW_MARKS, MARKS_ERROR } from "../actions/types";
+import { VIEW_MARKS, MARKS_ERROR, ADD_MARKS } from "../actions/types";
 
 const initialState = {
   user: null,
@@ -15,6 +15,13 @@ export default function marks(state = initialState, action) {
       return {
         ...state,
         users: payload,
+        loading: false,
+      };
+
+    case ADD_MARKS:
+      return {
+        ...state,
+        user: payload,
         loading: false,
       };
 

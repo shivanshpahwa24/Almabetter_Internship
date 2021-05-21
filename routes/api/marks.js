@@ -38,16 +38,16 @@ router.post(
     const percentage = total / 3;
 
     try {
-      //See if User exists
-      let user = await User.findOne({ rollNo });
+      /*  //See if User exists
+      let user = await User.findOne({ parseInt(rollNo) });
       if (user) {
         return res
           .status(400)
           .json({ errors: [{ msg: "Roll No. already exists" }] });
-      }
+      } */
 
       // Insert into table
-      user = await User.create({
+      const user = await User.create({
         rollNo,
         name,
         maths,
