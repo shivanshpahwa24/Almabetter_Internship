@@ -33,6 +33,13 @@ body {
 .navbar .nav-link {
   color: var(--dark-color-a);
 }
+.alert-container {
+  width: 80%;
+  margin: 0 auto;
+}
+.alert-container .alert {
+  margin-top: 1rem;
+}
 
 .landing {
   height: 100vh;

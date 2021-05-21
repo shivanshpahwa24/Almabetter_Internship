@@ -12,11 +12,13 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Alert />
         <Switch>
           <Route exact path="/" component={Landing} />
           <>
             <Navbar />
+            <div className="alert-container">
+              <Alert />
+            </div>
             <Route exact path="/marks" component={Marks} />
             <Route exact path="/leaderboard" component={Leaderboard} />
           </>
