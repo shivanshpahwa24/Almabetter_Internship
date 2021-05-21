@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../../models/User");
 const { check, validationResult } = require("express-validator");
+const { v4: uuid } = require("uuid");
 
 // Get all users for leaderboard
 router.get("/", async (req, res) => {
@@ -36,6 +37,7 @@ router.post(
 
     const total = parseInt(maths) + parseInt(physics) + parseInt(chemistry);
     const percentage = total / 3;
+    const id = uuid();
 
     try {
       /*  //See if User exists
@@ -48,6 +50,7 @@ router.post(
 
       // Insert into table
       const user = await User.create({
+        id,
         rollNo,
         name,
         maths,

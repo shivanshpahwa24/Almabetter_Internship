@@ -1,20 +1,39 @@
-import React, { Fragment, useEffect } from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getMarks } from "../actions/marks";
-import { Link } from "react-router-dom";
+import { DataGrid } from "@material-ui/data-grid";
 
-const Leaderboard = ({ getMarks, marks: { marks, loading } }) => {
+const Leaderboard = ({ getMarks, marks: { users } }) => {
   useEffect(() => {
     //So that all the data is already filled as soon as the page loads
     getMarks();
   }, [getMarks]);
   return (
-    <div>
-      <Link className="landing-buttons" to="/">
-        Back to home page
-      </Link>
-      <div className="leaderboard">Leaderboard</div>
+    <div className="leaderboard">
+      <div style={{ width: "100%" }}>
+        <DataGrid
+          columns={[
+            { field: "name", headerName: "Name" },
+            { field: "rollNo", headerName: "Roll No." },
+            { field: "maths", headerName: "Maths" },
+            { field: "physics", headerName: "Physics" },
+            { field: "chemistry", headerName: "Chemistry" },
+            { field: "total", headerName: "Total" },
+            { field: "percentage", headerName: "Percentage" },
+          ]}
+          rows={users}
+          autoHeight
+          disableColumnMenu
+          sortModel={[
+            {
+              field: "percentage",
+              sort: "desc",
+            },
+          ]}
+          hideFooter={true}
+        />
+      </div>
     </div>
   );
 };

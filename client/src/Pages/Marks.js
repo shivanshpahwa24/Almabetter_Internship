@@ -33,65 +33,60 @@ const Marks = ({ addMarks, history }) => {
   };
 
   return (
-    <div>
-      <Link className="landing-buttons" to="/">
-        Back to home page
-      </Link>
-      <div className="marks">
-        <h1 className="large text-primary">Enter your marks</h1>
+    <div className="marks">
+      <h1 className="large text-primary">Enter your marks</h1>
 
-        <form className="form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <input
-              type="text"
-              placeholder="Name"
-              name="name"
-              onChange={onChange}
-              value={name}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              placeholder="Roll No."
-              name="rollNo"
-              value={rollNo}
-              onChange={onChange}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              placeholder="Maths (Out of 100)"
-              name="maths"
-              value={maths}
-              onChange={onChange}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              placeholder="Physics (Out of 100)"
-              name="physics"
-              value={physics}
-              onChange={onChange}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              placeholder="Chemistry (Out of 100)"
-              name="chemistry"
-              value={chemistry}
-              onChange={onChange}
-            />
-          </div>
-          <input type="submit" className="btn btn-primary" value="Add Marks" />
-        </form>
-        <p className="my-1">
-          <Link to="/leaderboard">View Leaderboard</Link>
-        </p>
-      </div>
+      <form className="form" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Name"
+            name="name"
+            onChange={onChange}
+            value={name}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Roll No."
+            name="rollNo"
+            value={rollNo}
+            onChange={onChange}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Maths (Out of 100)"
+            name="maths"
+            value={maths}
+            onChange={onChange}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Physics (Out of 100)"
+            name="physics"
+            value={physics}
+            onChange={onChange}
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="text"
+            placeholder="Chemistry (Out of 100)"
+            name="chemistry"
+            value={chemistry}
+            onChange={onChange}
+          />
+        </div>
+        <input type="submit" className="btn btn-primary" value="Add Marks" />
+      </form>
+      <p className="my-1">
+        <Link to="/leaderboard">View Leaderboard</Link>
+      </p>
     </div>
   );
 };

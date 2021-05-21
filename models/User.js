@@ -2,9 +2,12 @@ const Sequelize = require("sequelize");
 const db = require("../config/db");
 
 const User = db.define("user", {
-  rollNo: {
+  id: {
     type: Sequelize.STRING,
     primaryKey: true,
+  },
+  rollNo: {
+    type: Sequelize.STRING,
     allowNull: false,
   },
   name: {
