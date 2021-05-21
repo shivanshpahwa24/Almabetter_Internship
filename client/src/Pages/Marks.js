@@ -35,7 +35,7 @@ const Marks = ({ addMarks, history }) => {
   return (
     <div className="marks">
       <div className="marks-container">
-        <h1>Enter Your Information</h1>
+        <h2 className="mb-1">Enter Your Information</h2>
 
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-group">

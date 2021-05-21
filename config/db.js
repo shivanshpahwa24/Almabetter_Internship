@@ -3,9 +3,11 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-module.exports = new Sequelize("almabetterdb", "root", "12345678", {
+const { SQL_DB, SQL_USER, SQL_PASSWORD, SQL_TYPE } = process.env;
+
+module.exports = new Sequelize(SQL_DB, SQL_USER, SQL_PASSWORD, {
   host: "localhost",
-  dialect: "mysql",
+  dialect: SQL_TYPE,
 
   pool: {
     max: 5,

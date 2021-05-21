@@ -36,6 +36,8 @@ body {
 .alert-container {
   width: 80%;
   margin: 0 auto;
+  position: absolute;
+  left: 10%;
 }
 .alert-container .alert {
   margin-top: 1rem;
