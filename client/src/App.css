@@ -101,7 +101,7 @@ body {
 }
 
 .leaderboard {
-  height: 90vh;
+  min-height: 90vh;
   width: 100vw;
   color: var(--dark-color-a);
   display: flex;
